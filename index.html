@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Windows 98 Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="desktop">
+    <div class="icon" onclick="openWindow('myComputer')">
+      <img src="icons/mycomputer.png" />
+      <p>My Computer</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('notepad')">
+      <img src="icons/notepad.png" />
+      <p>Notepad</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('controlPanel')">
+      <img src="icons/controlpanel.png" />
+      <p>Control Panel</p>
+    </div>
+
+    <div class="icon" onclick="openWindow('winver')">
+      <img src="icons/winver.png" />
+      <p>winver</p>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <div class="start-button" onclick="toggleStartMenu()">Start</div>
+    <div class="clock" id="clock"></div>
+  </div>
+
+  <div class="start-menu" id="startMenu">
+    <ul>
+      <li onclick="openWindow('notepad')">Programs > Notepad</li>
+      <li onclick="openWindow('paint')">Accessories > Paint</li>
+      <li onclick="openWindow('controlPanel')">Settings > Control Panel</li>
+      <li onclick="openWindow('winver')">Run > winver</li>
+    </ul>
+  </div>
+
+  <!-- Windows -->
+  <div class="window" id="myComputer">
+    <div class="title-bar">
+      <span>My Computer</span>
+      <button onclick="closeWindow('myComputer')">X</button>
+    </div>
+    <div class="window-content">
+      <p><b>C:\</b></p>
+      <ul>
+        <li class="clickable" onclick="alert('Opening Program Files...')">📁 Program Files</li>
+        <li class="clickable" onclick="alert('Opening Windows folder...')">📁 Windows</li>
+        <li class="clickable" onclick="alert('Opening Users...')">📁 Users</li>
+        <li class="clickable" onclick="alert('Opening autoexec.bat...')">📄 autoexec.bat</li>
+        <li class="clickable" onclick="alert('Opening win.ini...')">📄 win.ini</li>
+        <li class="clickable" onclick="openWindow('install')">🧩 setup.exe</li>
+        <li class="clickable" onclick="openWindow('bsod')">🧩 notmyfault.exe</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="window" id="notepad">
+    <div class="title-bar">
+      <span>Notepad</span>
+      <button onclick="closeWindow('notepad')">X</button>
+    </div>
+    <div class="window-content"><textarea rows="10" cols="40" placeholder=""></textarea></div>
+  </div>
+
+  <div class="window" id="paint">
+    <div class="title-bar">
+      <span>Paint</span>
+      <button onclick="closeWindow('paint')">X</button>
+    </div>
+    <div class="window-content">Pretend paint app</div>
+  </div>
+
+  <div class="window" id="controlPanel">
+    <div class="title-bar">
+      <span>Control Panel</span>
+      <button onclick="closeWindow('controlPanel')">X</button>
+    </div>
+    <div class="window-content">
+      <p>🖱 Mouse</p>
+      <p>🖥 Display</p>
+      <p>🌐 Internet Options</p>
+      <p>🔊 Sounds</p>
+    </div>
+  </div>
+
+  <div class="window" id="winver">
+    <div class="title-bar">
+      <span>winver</span>
+      <button onclick="closeWindow('winver')">X</button>
+    </div>
+    <div class="window-content">
+      <p>Microsoft Windows 98<br>Version 4.10.1998<br>© Microsoft Corporation</p>
+    </div>
+  </div>
+
+  <div class="window" id="install">
+    <div class="title-bar">
+      <span>setup.exe</span>
+      <button onclick="closeWindow('install')">X</button>
+    </div>
+    <div class="window-content">
+      <p>Welcome to the Setup Wizard! Installing...</p>
+    </div>
+  </div>
+
+  <div class="window" id="bsod">
+    <div class="title-bar">
+      <span>notmyfault.exe</span>
+      <button onclick="closeWindow('bsod')">X</button>
+    </div>
+    <div class="window-content" style="background: navy; color: white; height: 200px;">
+      <p><strong>*** STOP: 0x0000001E (0xC0000005, 0x00000000)</strong><br><br>
+      A fatal exception has occurred. Windows has been shut down to prevent damage to your computer.<br><br>
+      Press CTRL+ALT+DELETE to restart your computer. If this screen appears again, check your system hardware or contact your administrator.</p>
+    </div>
+  </div>
+</body>
+</html>
+
+
